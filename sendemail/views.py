@@ -122,7 +122,7 @@ class  changepassword(APIView):
                 
                 changepassword.oTPStatus='False'
 
-                changepassword.save()
+                changepassword.save()        
 
                 return Response({"status":True,"message":"Password Change Successfully!"})
         
