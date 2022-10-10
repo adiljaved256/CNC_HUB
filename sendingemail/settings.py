@@ -12,7 +12,7 @@ https://docs.djangoproject.com/en/4.0/ref/settings/
 
 from pathlib import Path
 from decouple import config
-
+import os 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -118,6 +118,16 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/4.0/howto/static-files/
 
 STATIC_URL = 'static/'
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static")]
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATICFILES_DIRS = (
+BASE_DIR / 'static',
+)
+
+
+# Upload File
+MEDIA_ROOT = BASE_DIR / 'media' 
+MEDIA_URL = '/media/'
 
 #DataFlair
 EMAIL_BACKEND ='django.core.mail.backends.smtp.EmailBackend'
@@ -132,3 +142,10 @@ EMAIL_HOST_PASSWORD = 'mokxizfzxtojkfnv'
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    
+    "http://127.0.0.1:8000",
+    "http://localhost:3000",
+    
+]

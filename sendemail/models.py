@@ -8,7 +8,7 @@ class account(models.Model):
     ContactNo=models.CharField(max_length=255, default='')
     oTP=models.IntegerField( default='0')
     oTPStatus=models.CharField(max_length=255, default='False')
-
+    image = models.ImageField(upload_to='SuperAdmin/', default="SuperAdmin/dummy.jpg")  
 
     def __str__(self):
         return self.firstname
